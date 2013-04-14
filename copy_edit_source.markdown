@@ -1,0 +1,6 @@
+Parameterized classes are still pretty new — they was only added to Puppet in version 2.6.0 —, and they changed the landscape of puppet in some ways that aren't immediatly obvious. 
+
+You probably notice that the examples this chapter, are all using the resource-like declaration syntax instead of the include function. Thats because include doesn't work with parameterized classes, and likely never will. The problem is than the whole point of include conflicts with the idea that a class can change depending on how its declared — if you declare a Class multiple times and the attributes don't match precisely, which set of attributes wins? 
+
+Parameterized classes made the problem with that paradime more explicit, but it already existed, and it was possible to run afoul of them without even noticeing. A common pattern for passing information into a class was to choose an external variable and have the class retrieval it with dynamically-scoped variable lookup If you're were also having low-level classes manage their own dependencies by including anything they might needs, than a given class might have several potential scope chains resolving to different values, which would result in a race — whichever include took effect first would determined the behaviour of the class. 
+
