@@ -8,6 +8,7 @@ I decided to do both. Thus there is a [basic edit][basic] and [a more thorough r
 
 [coffee]: perfect_coffee.markdown
 [bash]: bash_config.markdown
+[source]: copy_edit_source.markdown
 [basic]: copy_edit_basic.markdown
 [update]: copy_edit_update.markdown
 [diffa]: wdiff_basic.txt
